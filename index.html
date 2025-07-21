@@ -1,247 +1,215 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paradigmas de Programación</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paradigmas de Programación</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f9;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
 
-        header {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 1rem 0;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+    header {
+      text-align: center;
+      padding: 30px 0;
+      background: linear-gradient(135deg, #4a90e2, #50c878);
+      color: white;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
 
-        header p {
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #4a90e2;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
 
-        main {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
 
-        section {
-            margin-bottom: 30px;
-            padding: 20px;
-            border-left: 5px solid #3498db;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-        }
+    p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
 
-        section h2 {
-            color: #34495e;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
 
-        section h3 {
-            color: #555;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
+    li {
+      margin-bottom: 8px;
+    }
 
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-            padding: 0;
-        }
+    .paradigma {
+      background-color: #f0f8ff;
+      border-left: 5px solid #4a90e2;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+      transition: transform 0.2s;
+    }
 
-        ul li {
-            margin-bottom: 8px;
-        }
+    .paradigma:hover {
+      transform: scale(1.01);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-        pre {
-            background-color: #eee;
-            padding: 15px;
-            border-left: 3px solid #e74c3c;
-            overflow-x: auto;
-            border-radius: 4px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9em;
-        }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #7f8c8d;
+      font-size: 0.9em;
+    }
 
-        code {
-            font-family: 'Courier New', Courier, monospace;
-            background-color: #e0e0e0;
-            padding: 2px 5px;
-            border-radius: 3px;
-        }
-
-        strong {
-            color: #2980b9;
-        }
-
-        hr {
-            border: 0;
-            height: 1px;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
-            margin: 40px 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            font-size: 0.9em;
-            margin-top: 30px;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    code {
+      background-color: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
     <header>
-        <h1>Paradigmas de Programación</h1>
-        <p>Explorando los diferentes enfoques para construir software.</p>
+      <h1>Paradigmas de Programación</h1>
+      <p>Guía introductoria a los estilos fundamentales de programación</p>
     </header>
 
-    <main>
-        <section id="imperativa">
-            <h2>Programación Imperativa 🛠️</h2>
-            <p>
-                La **programación imperativa** se centra en **cómo** el programa debe realizar una tarea. Se basa en una secuencia de instrucciones que modifican el estado del programa. Piensa en ella como una lista de pasos detallados que una computadora debe seguir para llegar a un resultado.
-            </p>
-            <h3>Características clave:</h3>
-            <ul>
-                <li>**Control de flujo explícito:** Usa estructuras como bucles (<code>for</code>, <code>while</code>) y condicionales (<code>if/else</code>) para dictar el orden de ejecución.</li>
-                <li>**Modificación de estado:** Las variables se modifican directamente a lo largo del programa.</li>
-                <li>**Procedimientos/Funciones:** El código se organiza en bloques que realizan tareas específicas.</li>
-            </ul>
-            <h3>Ejemplo (pseudo-código):</h3>
-            <pre><code>
-                variable resultado = 0;
-                para i desde 1 hasta 5:
-                    resultado = resultado + i;
-                imprimir resultado; // Salida: 15
-            </code></pre>
-            <p>
-                En este ejemplo, estamos diciendo explícitamente a la computadora qué hacer en cada paso para calcular la suma de los primeros cinco números.
-            </p>
-        </section>
+    <section>
+      <p>
+        Un <strong>paradigma de programación</strong> es un enfoque o estilo fundamental para diseñar y estructurar programas. 
+        Cada paradigma ofrece una forma distinta de pensar sobre la resolución de problemas mediante código. 
+        A continuación, se describen los principales paradigmas utilizados en el desarrollo de software.
+      </p>
+    </section>
 
-        <hr>
+    <section>
+      <h2>1. Programación Imperativa</h2>
+      <div class="paradigma">
+        <p>
+          Este es el paradigma más tradicional. Consiste en dar al computador una secuencia de comandos que debe ejecutar paso a paso.
+          Se basa en cambiar el estado del programa mediante asignaciones y estructuras de control como bucles y condicionales.
+        </p>
+        <ul>
+          <li><strong>Ejemplo:</strong> Lenguajes como C, Pascal y ensamblador.</li>
+          <li><strong>Características:</strong> Secuencial, uso de variables, modificaciones explícitas del estado.</li>
+        </ul>
+        <p><code>int suma = 0; for (int i = 1; i <= 5; i++) { suma += i; }</code></p>
+      </div>
+    </section>
 
-        <section id="declarativa">
-            <h2>Programación Declarativa 📜</h2>
-            <p>
-                La **programación declarativa** se enfoca en **qué** se debe lograr, en lugar de cómo. Tú describes el resultado deseado, y el sistema se encarga de los detalles de la implementación. Es como pedirle algo a un asistente y dejar que él determine los pasos.
-            </p>
-            <h3>Características clave:</h3>
-            <ul>
-                <li>**Menos énfasis en el control de flujo:** Se expresa la lógica sin especificar el orden exacto de las operaciones.</li>
-                <li>**Inmutabilidad (frecuente):** Los datos no suelen modificarse después de su creación.</li>
-                <li>**Abstracción de detalles:** Oculta la complejidad subyacente de la implementación.</li>
-            </ul>
-            <h3>Ejemplo (SQL - Lenguaje de Consulta Estructurado):</h3>
-            <pre><code>
-                SELECT nombre, email FROM usuarios WHERE edad > 18;
-            </code></pre>
-            <p>
-                Aquí, simplemente declaramos que queremos los nombres y correos electrónicos de usuarios mayores de 18 años, sin especificar cómo la base de datos debe buscar esa información.
-            </p>
-        </section>
+    <section>
+      <h2>2. Programación Orientada a Objetos (POO)</h2>
+      <div class="paradigma">
+        <p>
+          La POO organiza el software en <strong>objetos</strong>, que son instancias de <strong>clases</strong>. 
+          Cada objeto combina datos (atributos) y comportamientos (métodos). 
+          Se basa en principios como encapsulamiento, herencia, polimorfismo y abstracción.
+        </p>
+        <ul>
+          <li><strong>Ejemplo:</strong> Java, C++, Python, Ruby.</li>
+          <li><strong>Beneficios:</strong> Reutilización de código, modularidad, mantenimiento más fácil.</li>
+        </ul>
+        <p><code>class Perro { String raza; void ladrar() { ... } }</code></p>
+      </div>
+    </section>
 
-        <hr>
+    <section>
+      <h2>3. Programación Funcional</h2>
+      <div class="paradigma">
+        <p>
+          En este paradigma, los programas se construyen mediante la evaluación de funciones matemáticas. 
+          Se evita el cambio de estado y los datos inmutables son clave. 
+          Las funciones pueden ser tratadas como valores (funciones de primera clase).
+        </p>
+        <ul>
+          <li><strong>Ejemplo:</strong> Haskell, Lisp, Erlang, también soportado en JavaScript, Python y Scala.</li>
+          <li><strong>Ventajas:</strong> Código más predecible, fácil de probar y depurar.</li>
+        </ul>
+        <p><code>const doble = x => x * 2; const numerosDobles = [1,2,3].map(doble);</code></p>
+      </div>
+    </section>
 
-        <section id="funcional">
-            <h2>Programación Funcional 🧩</h2>
-            <p>
-                La **programación funcional** es un sub-paradigma de la programación declarativa. Se basa en el concepto de **funciones puras**, que son como funciones matemáticas: para una misma entrada, siempre producen la misma salida y no tienen efectos secundarios (no modifican el estado externo).
-            </p>
-            <h3>Características clave:</h3>
-            <ul>
-                <li>**Funciones puras:** Sin efectos secundarios, producen el mismo resultado para las mismas entradas.</li>
-                <li>**Inmutabilidad:** Los datos son inmutables; en lugar de modificarlos, se crean nuevas versiones.</li>
-                <li>**Funciones de primera clase:** Las funciones pueden ser tratadas como cualquier otra variable (pasadas como argumentos, devueltas por otras funciones).</li>
-                <li>**Recursión:** Frecuentemente utilizada para la iteración en lugar de bucles.</li>
-            </ul>
-            <h3>Ejemplo (JavaScript):</h3>
-            <pre><code>
-                const sumarNumeros = (numeros) => {
-                    return numeros.reduce((acumulador, actual) => acumulador + actual, 0);
-                };
+    <section>
+      <h2>4. Programación Declarativa</h2>
+      <div class="paradigma">
+        <p>
+          En lugar de especificar cómo hacer algo (como en imperativo), se describe <strong>qué</strong> se quiere lograr. 
+          Es más abstracto y conciso.
+        </p>
+        <ul>
+          <li><strong>Ejemplos:</strong> SQL (para consultas), HTML (estructura), Prolog (lógica).</li>
+          <li><strong>Subtipos:</strong> Funcional y lógica son formas de programación declarativa.</li>
+        </ul>
+        <p><code>SELECT nombre FROM usuarios WHERE edad > 18;</code> — Describe qué obtener, no cómo recorrer los datos.</p>
+      </div>
+    </section>
 
-                const miArray = [1, 2, 3, 4, 5];
-                console.log(sumarNumeros(miArray)); // Salida: 15
-            </code></pre>
-            <p>
-                Aquí, la función `sumarNumeros` es pura. No modifica el array original y siempre devolverá 15 para la entrada `[1, 2, 3, 4, 5]`.
-            </p>
-        </section>
+    <section>
+      <h2>5. Programación Orientada a Eventos</h2>
+      <div class="paradigma">
+        <p>
+          El flujo del programa está determinado por eventos como pulsaciones de teclas, clics del ratón o mensajes entrantes. 
+          Muy común en aplicaciones interactivas y sistemas GUI.
+        </p>
+        <ul>
+          <li><strong>Uso típico:</strong> Aplicaciones web (JavaScript), interfaces gráficas, servidores Node.js.</li>
+          <li><strong>Mecanismo:</strong> Se registran "listeners" o manejadores de eventos.</li>
+        </ul>
+        <p><code>boton.addEventListener('click', () => alert('¡Clic!'));</code></p>
+      </div>
+    </section>
 
-        <hr>
+    <section>
+      <h2>6. Programación Lógica</h2>
+      <div class="paradigma">
+        <p>
+          Basada en reglas y hechos lógicos. El programador define relaciones y el sistema deduce soluciones automáticamente.
+        </p>
+        <ul>
+          <li><strong>Lenguaje principal:</strong> Prolog.</li>
+          <li><strong>Aplicaciones:</strong> Inteligencia artificial, sistemas expertos, procesamiento del lenguaje natural.</li>
+        </ul>
+        <p><code>padre(juan, maria). hijo(X,Y) :- padre(Y,X).</code></p>
+      </div>
+    </section>
 
-        <section id="reactiva">
-            <h2>Programación Reactiva ⚡</h2>
-            <p>
-                La **programación reactiva** es un paradigma que se ocupa de **flujos de datos asíncronos** y la **propagación del cambio**. Piensa en una hoja de cálculo: cuando cambias una celda, todas las celdas que dependen de ella se actualizan automáticamente.
-            </p>
-            <h3>Características clave:</h3>
-            <ul>
-                <li>**Flujos de datos:** Todo se representa como un flujo (eventos de usuario, datos de APIs, variables).</li>
-                <li>**Asincronía:** Maneja operaciones que no ocurren de forma inmediata.</li>
-                <li>**Propagación de cambios:** Las transformaciones y operaciones se aplican automáticamente a medida que los datos fluyen.</li>
-                <li>**Observables y Suscriptores:** Los "observables" emiten datos, y los "suscriptores" reaccionan a esos datos.</li>
-            </ul>
-            <h3>Ejemplo (Concepto con RxJS - JavaScript):</h3>
-            <pre><code>
-                // Un "observable" que emite clics en un botón
-                // Suponiendo 'miBoton' es un elemento del DOM
-                const miBoton = document.createElement('button');
-                miBoton.textContent = 'Haz clic';
-                document.body.appendChild(miBoton);
-
-                // fromEvent y interval serían de una librería como RxJS
-                // Este es un pseudo-código para ilustrar el concepto
-                // const clicks$ = fromEvent(miBoton, 'click');
-                // clicks$.subscribe(event => {
-                //     console.log('Botón clicado!', event);
-                // });
-
-                // const segundos$ = interval(1000);
-                // const contadorElemento = document.createElement('p');
-                // contadorElemento.id = 'contador';
-                // document.body.appendChild(contadorElemento);
-
-                // segundos$.subscribe(valor => {
-                //     contadorElemento.textContent = `Tiempo: ${valor}s`;
-                // });
-                console.log("// El código comentado simula el uso de una librería reactiva como RxJS.");
-                console.log("// Para un ejemplo funcional real, necesitarías incluir la librería.");
-            </code></pre>
-            <p>
-                En este ejemplo, los clics del botón y el paso del tiempo son "flujos" a los que podemos "suscribirnos" para reaccionar de forma asíncrona cuando ocurren eventos.
-            </p>
-        </section>
-    </main>
+    <section>
+      <h2>Conclusión</h2>
+      <p>
+        No existe un único "mejor" paradigma. La elección depende del problema a resolver, el entorno y las preferencias del equipo. 
+        Muchos lenguajes modernos (como Python, JavaScript o Scala) son <strong>multi-paradigma</strong>, lo que permite combinar ventajas de varios estilos.
+      </p>
+      <p>
+        Comprender estos paradigmas ayuda a escribir código más claro, eficiente y mantenible, y a elegir las herramientas adecuadas para cada tarea.
+      </p>
+    </section>
 
     <footer>
-        <p>&copy; 2025 Explorando Paradigmas de Programación</p>
+      &copy; 2025 Guía de Paradigmas de Programación | Documento educativo
     </footer>
+  </div>
 </body>
 </html>
