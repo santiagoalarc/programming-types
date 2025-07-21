@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paradigmas de Programación</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f9;
+      color: #333;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 0;
+      background: linear-gradient(135deg, #4a90e2, #50c878);
+      color: white;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #4a90e2;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+
+    ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .paradigma {
+      background-color: #f0f8ff;
+      border-left: 5px solid #4a90e2;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+      transition: transform 0.2s;
+    }
+
+    .paradigma:hover {
+      transform: scale(1.01);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #7f8c8d;
+      font-size: 0.9em;
+    }
+
+    code {
+      background-color: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Paradigmas de Programación</h1>
+      <p>Guía introductoria a los estilos fundamentales de programación</p>
+    </header>
+
+    <section>
+      <p>
+        Un <strong>paradigma de programación</strong> es un enfoque o estilo fundamental para diseñar y estructurar programas. 
+        Cada paradigma ofrece una forma distinta de pensar sobre la resolución de problemas mediante código. 
+        A continuación, se describen los principales paradigmas utilizados en el desarrollo de software.
+      </p>
+    </section>
+
+    <section>
+      <h2>1. Programación Imperativa</h2>
+      <div class="paradigma">
+        <p>
+          Este es el paradigma más tradicional. Consiste en dar al computador una secuencia de comandos que debe ejecutar paso a paso.
+          Se basa en cambiar el estado del programa mediante asignaciones y estructuras de control como bucles y condicionales.
+        </p>
+        <ul>
+          <li><strong>Ejemplo:</strong> Lenguajes como C, Pascal y ensamblador.</li>
+          <li><strong>Características:</strong> Secuencial, uso de variables, modificaciones explícitas del estado.</li>
+        </ul>
+        <p><code>int suma = 0; for (int i = 1; i <= 5; i++) { suma += i; }</code></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Programación Orientada a Objetos (POO)</h2>
+      <div class="paradigma">
+        <p>
+          La POO organiza el software en <strong>objetos</strong>, que son instancias de <strong>clases</strong>. 
+          Cada objeto combina datos (atributos) y comportamientos (métodos). 
+          Se basa en principios como encapsulamiento, herencia, polimorfismo y abstracción.
+        </p>
+        <ul>
+          <li><strong>Ejemplo:</strong> Java, C++, Python, Ruby.</li>
+          <li><strong>Beneficios:</strong> Reutilización de código, modularidad, mantenimiento más fácil.</li>
+        </ul>
+        <p><code>class Perro { String raza; void ladrar() { ... } }</code></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Programación Funcional</h2>
+      <div class="paradigma">
+        <p>
+          En este paradigma, los programas se construyen mediante la evaluación de funciones matemáticas. 
+          Se evita el cambio de estado y los datos inmutables son clave. 
+          Las funciones pueden ser tratadas como valores (funciones de primera clase).
+        </p>
+        <ul>
+          <li><strong>Ejemplo:</strong> Haskell, Lisp, Erlang, también soportado en JavaScript, Python y Scala.</li>
+          <li><strong>Ventajas:</strong> Código más predecible, fácil de probar y depurar.</li>
+        </ul>
+        <p><code>const doble = x => x * 2; const numerosDobles = [1,2,3].map(doble);</code></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Programación Declarativa</h2>
+      <div class="paradigma">
+        <p>
+          En lugar de especificar cómo hacer algo (como en imperativo), se describe <strong>qué</strong> se quiere lograr. 
+          Es más abstracto y conciso.
+        </p>
+        <ul>
+          <li><strong>Ejemplos:</strong> SQL (para consultas), HTML (estructura), Prolog (lógica).</li>
+          <li><strong>Subtipos:</strong> Funcional y lógica son formas de programación declarativa.</li>
+        </ul>
+        <p><code>SELECT nombre FROM usuarios WHERE edad > 18;</code> — Describe qué obtener, no cómo recorrer los datos.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>5. Programación Orientada a Eventos</h2>
+      <div class="paradigma">
+        <p>
+          El flujo del programa está determinado por eventos como pulsaciones de teclas, clics del ratón o mensajes entrantes. 
+          Muy común en aplicaciones interactivas y sistemas GUI.
+        </p>
+        <ul>
+          <li><strong>Uso típico:</strong> Aplicaciones web (JavaScript), interfaces gráficas, servidores Node.js.</li>
+          <li><strong>Mecanismo:</strong> Se registran "listeners" o manejadores de eventos.</li>
+        </ul>
+        <p><code>boton.addEventListener('click', () => alert('¡Clic!'));</code></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>6. Programación Lógica</h2>
+      <div class="paradigma">
+        <p>
+          Basada en reglas y hechos lógicos. El programador define relaciones y el sistema deduce soluciones automáticamente.
+        </p>
+        <ul>
+          <li><strong>Lenguaje principal:</strong> Prolog.</li>
+          <li><strong>Aplicaciones:</strong> Inteligencia artificial, sistemas expertos, procesamiento del lenguaje natural.</li>
+        </ul>
+        <p><code>padre(juan, maria). hijo(X,Y) :- padre(Y,X).</code></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Conclusión</h2>
+      <p>
+        No existe un único "mejor" paradigma. La elección depende del problema a resolver, el entorno y las preferencias del equipo. 
+        Muchos lenguajes modernos (como Python, JavaScript o Scala) son <strong>multi-paradigma</strong>, lo que permite combinar ventajas de varios estilos.
+      </p>
+      <p>
+        Comprender estos paradigmas ayuda a escribir código más claro, eficiente y mantenible, y a elegir las herramientas adecuadas para cada tarea.
+      </p>
+    </section>
+
+    <footer>
+      &copy; 2025 Guía de Paradigmas de Programación | Documento educativo
+    </footer>
+  </div>
+</body>
+</html>
